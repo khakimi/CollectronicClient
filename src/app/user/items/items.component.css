@@ -1,0 +1,24 @@
+
+.collection-card{
+  display: block;
+  margin: 3rem auto;
+  width: 70%;
+}
+.post-card {
+  display: block;
+  margin: 2rem auto;
+  width: 80%;
+}
+.post-image {
+  display: block;
+  margin: 1rem auto;
+  width: 40%;
+}
+
+.is-liked {
+  color: #b85656;
+}
+
+.not-liked {
+  color: grey;
+}

@@ -1,0 +1,36 @@
+<div >
+  <h2>Add Item to collection</h2>
+  <form [formGroup]="addItemForm">
+
+    <img  class="post-image" [src]="previewImgURL || basicImage" alt="user image">
+
+    <input type="file"
+           formControlName="imageInput"
+           style="display: none"
+           #fileInput
+           (change)="onFileSelected($event)">
+
+    <button mat-button (click)="fileInput.click()" >Pick File</button>
+
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput
+             formControlName="title">
+    </mat-form-field>
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Cation</mat-label>
+      <input matInput
+             formControlName="caption">
+    </mat-form-field>
+
+    <div class="row">
+      <button (click)="closeDialog()" class="w-50"
+              mat-button mat-dialog-close disableRipple>
+        Cancel
+      </button>
+      <button color="primary" class="w-50" [disabled]="addItemForm.invalid" (click)="submit()" mat-button disableRipple>
+        Add
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+<div>
+  <div style="text-align: right">
+    <button mat-flat-button color="primary" routerLink="/profile">My collections</button>
+  </div>
+
+  <h2>Create collection</h2>
+  <form [formGroup]="collectionForm">
+
+    <img class="post-image" [src]="previewImgURL || basicImage" alt="user image">
+
+    <input type="file"
+           style="display: none"
+           #fileInput
+           (change)="onFileSelected($event)">
+
+    <button mat-button (click)="fileInput.click()">Pick File</button>
+
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput
+             formControlName="title">
+    </mat-form-field>
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Description</mat-label>
+      <input matInput
+             formControlName="description">
+    </mat-form-field>
+
+    <div style="text-align: right">
+      <button mat-flat-button color="primary" [disabled]="collectionForm.invalid" (click)="submit()">
+        Create Post
+      </button>
+    </div>
+
+  </form>
+</div>

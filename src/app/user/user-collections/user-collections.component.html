@@ -1,0 +1,35 @@
+<div *ngIf="isLoaded" xmlns="http://www.w3.org/1999/html">
+  <div style="text-align: right">
+    <button mat-flat-button color="primary" routerLink="/profile/add">Add Collection</button>
+  </div>
+
+  <h2>{{collections.length}} Collections</h2>
+
+  <mat-card class="post-card" *ngFor="let collection of collections; let i = index">
+    <mat-card-header style="text-align: left">
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title mat-flat-button color="primary" >
+        {{collection.title}}
+      </mat-card-title>
+    </mat-card-header>
+    <img class="post-image" *ngIf="collection.image" [src]="collection.image" alt="collection image">
+    <mat-card-content >
+      <p style="font-size: large; text-align: left; margin: 7%" >
+        {{collection.description}}
+      </p>
+      <button mat-flat-button color="primary" [routerLink]="['/profile', collection.id ]">
+        {{getItemsNumber(i)}} items
+      </button>
+    </mat-card-content>
+
+
+
+    <mat-card-actions align="end">
+      <button color="warn" mat-button (click)="removeCollection(collection, i)">
+        <mat-icon color="warn">delete</mat-icon>
+        Remove Collection
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>
