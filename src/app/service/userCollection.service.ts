@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {UserCollection} from '../models/UserCollection';
 import {environment} from '../../environments/environment';
 
-const COLLECTION_API = environment.baseUrl+'/api/collection/';
+const COLLECTION_API = environment.baseUrl+'api/collection/';
 
 @Injectable({
   providedIn: 'root'
