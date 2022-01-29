@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {UserCollection} from '../models/UserCollection';
 
-const COLLECTION_API = 'http://localhost:8080/api/collection/';
+const COLLECTION_API = '/api/collection/';
 
 @Injectable({
   providedIn: 'root'
