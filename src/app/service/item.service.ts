@@ -3,8 +3,9 @@ import {HttpClient} from '@angular/common/http';
 import {UserCollection} from '../models/UserCollection';
 import {Observable} from 'rxjs';
 import {Item} from '../models/Item';
+import {environment} from '../../environments/environment';
 
-const ITEM_API = 'http://localhost:8080/api/item/';
+const ITEM_API = environment.baseUrl+'api/item/';
 
 @Injectable({
   providedIn: 'root'
